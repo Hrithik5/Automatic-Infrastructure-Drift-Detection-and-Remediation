@@ -5,6 +5,12 @@ DriftGuard is a risk-aware infrastructure reconciliation system built to continu
 Instead of blindly auto-remediating every infrastructure change, DriftGuard evaluates operational risk first and dynamically decides how the system should respond.
 Built as an internal infrastructure governance prototype using Terraform, GitHub Actions, AWS, Python, Slack, and GitHub Issues.
 
+---
+
+# 🏗️ Architecture
+
+![DriftGuard](architecture.png)
+
 --- 
 
 # 🚀 Features
@@ -30,29 +36,6 @@ Built as an internal infrastructure governance prototype using Terraform, GitHub
 | Notification | Slack Webhooks |
 | Audit Trail | Github Issues |
 | Remote Backend + State Locking | AWS S3 |
-
---- 
-
-# 🏗️ Architecture
-```
-GitHub Actions Scheduler
-          ↓
-Terraform Plan Generation
-          ↓
-Terraform JSON Parser
-          ↓
-Risk Classification Engine
-          ↓
-Decision Layer
- ┌────────┼───────────┐
- ↓        ↓           ↓
-AutoFix  Escalation  Alerting
-          ↓
-Slack Routing Engine
-          ↓
-GitHub Audit Trail
-
-```
 
 --- 
 
